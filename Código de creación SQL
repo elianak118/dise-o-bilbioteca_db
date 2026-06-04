@@ -14,3 +14,13 @@ CREATE TABLE libros (
       PRIMARY KEY (id_libro),
       FOREIGN KEY (autor_id) REFERENCES autores(id_autor)
   );
+_______
+CREATE TABLE prestamos (
+      id_prestamo INT AUTO_INCREMENT,
+      nombre_alumno VARCHAR(100),
+      libro_id INT,
+      fecha_prestamo DATE,
+      fecha_devolucion DATE,
+      PRIMARY KEY (id_prestamo),
+      FOREIGN KEY (libro_id) REFERENCES libros(id_libro)
+  );
