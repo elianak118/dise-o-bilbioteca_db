@@ -5,3 +5,12 @@
       nacionalidad VARCHAR(50),
       PRIMARY KEY (id_autor)
   );
+_______
+CREATE TABLE libros (
+      id_libro INT AUTO_INCREMENT,
+      titulo VARCHAR(150),
+      anio_publicacion INT,
+      autor_id INT,
+      PRIMARY KEY (id_libro),
+      FOREIGN KEY (autor_id) REFERENCES autores(id_autor)
+  );
