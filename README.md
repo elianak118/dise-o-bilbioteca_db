@@ -35,4 +35,14 @@ Esta tabla almacena los libros de la biblioteca y está conectada directamente c
   * `titulo`: Tipo `VARCHAR(150)` para soportar títulos largos.
   * `anio_publicacion`: Tipo `INT` para almacenar el año en formato numérico.
   * `autor_id`: Tipo `INT`, definido como **(`FOREIGN KEY`)**.
+ 
+### 3. Tabla: `prestamos`
+Esta tabla funciona como el registro histórico de movimientos de la biblioteca. Su objetivo es mapear qué estudiante tiene qué libro y los plazos de entrega. Es una tabla transaccional que maneja relaciones complejas.
+
+* **Estructura lógica creada de forma visual:**
+  * `id_prestamo`: Tipo `INT`, Llave Primaria y Autoincrementable.
+  * `nombre_alumno`: Tipo `VARCHAR(100)` para registrar al estudiante.
+  * `libro_id`: Tipo `INT`, definido como **(`FOREIGN KEY`)** hacia la tabla `libros`.
+  * `fecha_prestamo`: Tipo `DATE` (Registra el día de salida).
+  * `fecha_devolucion`: Tipo `DATE` (Registra el día límite de entrega).
 
