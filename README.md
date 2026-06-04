@@ -45,4 +45,8 @@ Esta tabla funciona como el registro histórico de movimientos de la biblioteca.
   * `libro_id`: Tipo `INT`, definido como **(`FOREIGN KEY`)** hacia la tabla `libros`.
   * `fecha_prestamo`: Tipo `DATE` (Registra el día de salida).
   * `fecha_devolucion`: Tipo `DATE` (Registra el día límite de entrega).
+ 
+### 4. Inserción de Datos en la Tabla `autores`
+Dado que la columna `id_autor` fue configurada con `AUTO_INCREMENT`, no es necesario especificar el ID manualmente; el motor de la base de datos genera los identificadores de forma secuencial y automática.
+
 
