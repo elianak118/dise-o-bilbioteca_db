@@ -1,5 +1,4 @@
 
-
   CREATE TABLE autores (
       id_autor INT AUTO_INCREMENT,
       nombre VARCHAR(100),
