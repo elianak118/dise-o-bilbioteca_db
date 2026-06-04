@@ -17,7 +17,7 @@ El sistema se compone de 3 tablas principales conectadas entre sí mediante Llav
 
 ---
 
-## 🛠️ Creación de Tablas (Paso a Paso)
+## 🛠️ Creación de Tablas
 
 ### 1. Tabla: `autores`
 Esta tabla fue diseñada para identificar de forma única a cada autor del sistema.
