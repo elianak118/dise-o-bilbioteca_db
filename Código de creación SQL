@@ -24,3 +24,14 @@ CREATE TABLE prestamos (
       PRIMARY KEY (id_prestamo),
       FOREIGN KEY (libro_id) REFERENCES libros(id_libro)
   );
+______
+INSERT INTO autores (nombre, nacionalidad) 
+VALUES 
+('J.K. Rowling', 'Británica'),
+('Miguel de Cervantes', 'Española');
+______
+INSERT INTO libros (titulo, anio_publicacion, autor_id) 
+  VALUES 
+  ('Cien años de soledad', 1967, 1),
+  ('Harry Potter y la piedra filosofal', 1997, 2),
+  ('Don Quijote de la Mancha', 1605, 3);
