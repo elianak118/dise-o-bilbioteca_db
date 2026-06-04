@@ -49,4 +49,5 @@ Esta tabla funciona como el registro histórico de movimientos de la biblioteca.
 ### 4. Inserción de Datos en la Tabla `autores`
 Dado que la columna `id_autor` fue configurada con `AUTO_INCREMENT`, no es necesario especificar el ID manualmente; el motor de la base de datos genera los identificadores de forma secuencial y automática.
 
-
+### 5. Inserción de Datos en la Tabla `libros` (Relacionada)
+Para poblar esta tabla, es obligatorio utilizar en la columna `autor_id` un identificador numérico que **ya exista** en la tabla maestra `autores`. De lo contrario, el motor de la base de datos bloqueará la inserción para proteger la integridad referencial.
