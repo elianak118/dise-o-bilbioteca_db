@@ -35,3 +35,6 @@ INSERT INTO libros (titulo, anio_publicacion, autor_id)
   ('Cien años de soledad', 1967, 1),
   ('Harry Potter y la piedra filosofal', 1997, 2),
   ('Don Quijote de la Mancha', 1605, 3);
+______
+INSERT INTO prestamos (nombre_alumno, libro_id, fecha_prestamo, fecha_devolucion) 
+  VALUES ('Carlos Gómez', 1, '2026-06-04', '2026-06-18');
