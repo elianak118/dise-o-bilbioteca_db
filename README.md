@@ -16,12 +16,9 @@ El sistema se compone de 3 tablas principales conectadas entre sí mediante Llav
 3. **`prestamos`** *(Próximamente)*: Registrará qué alumno se lleva qué libro.
 
 ---
-
 ## 🛠️ Creación de Tablas
-
 ### 1. Tabla: `autores`
 Esta tabla fue diseñada para identificar de forma única a cada autor del sistema.
-
 * **Estructura lógica:**
   * `id_autor`: Tipo `INT`, Llave Primaria y Autoincrementable. 
   * `nombre`: Tipo `VARCHAR(100)`. 
@@ -29,7 +26,6 @@ Esta tabla fue diseñada para identificar de forma única a cada autor del siste
 
 ### 2. Tabla: `libros`
 Esta tabla almacena los libros de la biblioteca y está conectada directamente con la tabla de `autores` mediante una relación de "uno a muchos" (un autor puede tener muchos libros escritos, pero un libro solo pertenece a un autor).
-
 * **Estructura lógica creada manualmente:**
   * `id_libro`: Tipo `INT`, Llave Primaria y con `AUTO_INCREMENT` activo.
   * `titulo`: Tipo `VARCHAR(150)` para soportar títulos largos.
@@ -38,16 +34,18 @@ Esta tabla almacena los libros de la biblioteca y está conectada directamente c
  
 ### 3. Tabla: `prestamos`
 Esta tabla funciona como el registro histórico de movimientos de la biblioteca. Su objetivo es mapear qué estudiante tiene qué libro y los plazos de entrega. Es una tabla transaccional que maneja relaciones complejas.
-
 * **Estructura lógica creada de forma visual:**
   * `id_prestamo`: Tipo `INT`, Llave Primaria y Autoincrementable.
   * `nombre_alumno`: Tipo `VARCHAR(100)` para registrar al estudiante.
   * `libro_id`: Tipo `INT`, definido como **(`FOREIGN KEY`)** hacia la tabla `libros`.
   * `fecha_prestamo`: Tipo `DATE` (Registra el día de salida).
   * `fecha_devolucion`: Tipo `DATE` (Registra el día límite de entrega).
- 
+__________
 ### 4. Inserción de Datos en la Tabla `autores`
 Dado que la columna `id_autor` fue configurada con `AUTO_INCREMENT`, no es necesario especificar el ID manualmente; el motor de la base de datos genera los identificadores de forma secuencial y automática.
 
 ### 5. Inserción de Datos en la Tabla `libros` (Relacionada)
 Para poblar esta tabla, es obligatorio utilizar en la columna `autor_id` un identificador numérico que **ya exista** en la tabla maestra `autores`. De lo contrario, el motor de la base de datos bloqueará la inserción para proteger la integridad referencial.
+
+### 6. Inserción de Datos en la Tabla `prestamos` 
+La tabla de préstamos conecta la entidad del estudiante con la entidad `libros`. En este paso, es crucial formatear las fechas bajo el estándar internacional de almacenamiento de bases de datos (`AAAA-MM-DD`).
