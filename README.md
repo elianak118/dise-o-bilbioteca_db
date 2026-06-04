@@ -27,3 +27,12 @@ Esta tabla fue diseñada para identificar de forma única a cada autor del siste
   * `nombre`: Tipo `VARCHAR(100)`. 
   * `nacionalidad`: Tipo `VARCHAR(50)`.
 
+### 2. Tabla: `libros`
+Esta tabla almacena los libros de la biblioteca y está conectada directamente con la tabla de `autores` mediante una relación de "uno a muchos" (un autor puede tener muchos libros escritos, pero un libro solo pertenece a un autor).
+
+* **Estructura lógica creada manualmente:**
+  * `id_libro`: Tipo `INT`, Llave Primaria y con `AUTO_INCREMENT` activo.
+  * `titulo`: Tipo `VARCHAR(150)` para soportar títulos largos.
+  * `anio_publicacion`: Tipo `INT` para almacenar el año en formato numérico.
+  * `autor_id`: Tipo `INT`, definido como **(`FOREIGN KEY`)**.
+
